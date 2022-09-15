@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="projectcreation1.taskcreation">
+        <methods>
+          <include name="task"/>
+        </methods>
+      </class> <!-- projectcreation1.taskcreation -->
+      <class name="projectcreation1.taskfunctionallity">
+        <methods>
+          <include name="taskfunc"/>
+        </methods>
+      </class> <!-- projectcreation1.taskfunctionallity -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

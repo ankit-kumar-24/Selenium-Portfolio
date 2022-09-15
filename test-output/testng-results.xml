@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-15T12:35:34 IST" name="Default suite" finished-at="2022-09-15T12:36:37 IST" duration-ms="62291">
+    <groups>
+    </groups>
+    <test started-at="2022-09-15T12:35:34 IST" name="Default test" finished-at="2022-09-15T12:36:37 IST" duration-ms="62291">
+      <class name="projectcreation1.milestonehthroughtask">
+        <test-method signature="miletask()[pri:0, instance:projectcreation1.milestonehthroughtask@16a0ee18]" started-at="2022-09-15T12:35:34 IST" name="miletask" finished-at="2022-09-15T12:36:37 IST" duration-ms="62211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- miletask -->
+      </class> <!-- projectcreation1.milestonehthroughtask -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
