@@ -1,14 +1,13 @@
 package projectcreation1;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class taskcreation{
+public class addtags {
 	@Test
-	public void task() throws InterruptedException {
+	public void tagss() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");	 
 		  ChromeDriver driver = new ChromeDriver();
 		  driver.manage().window().maximize();
@@ -36,12 +35,18 @@ public class taskcreation{
 		  System.out.println("Task Created Successfully");
 		  driver.findElement(By.xpath("//div[@class='task-overlay']")).click();
 		  Thread.sleep(2000);
-		  WebElement sub = driver.findElement(By.xpath("//div[@class='multi-line-input item-title empty']"));
-		  sub.sendKeys("Test 1");
+		  driver.findElement(By.xpath("(//span[@class='action-text'][normalize-space()='Add'])[2]")).click();
 		  Thread.sleep(2000);
-		  sub.sendKeys(Keys.ENTER);
-		  System.out.println("Subtask Created Successfully");
-		  Thread.sleep(5000);
+		  driver.findElement(By.xpath("//body[1]/div[7]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/span[3]")).click();
+		  Thread.sleep(2000);
+		  System.out.println("Tag added successfully");
+		  driver.findElement(By.xpath("//button[@class='btn btn-link']")).click();
+		  driver.findElement(By.xpath("//input[@placeholder='Type a name…']")).sendKeys("Test 1");
+		  Thread.sleep(2000);
+		  driver.findElement(By.cssSelector("button[class='btn btn-success']")).click();
+		  System.out.println("Tag created successfully");
+		  driver.findElement(By.xpath("//button[@class='btn btn-icon btn-small popout-close']")).click();
+		  Thread.sleep(3000);
 		  driver.close();
-  }
+	}
 }

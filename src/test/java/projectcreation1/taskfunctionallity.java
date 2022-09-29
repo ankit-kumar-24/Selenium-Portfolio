@@ -49,6 +49,10 @@ public class taskfunctionallity {
 		  System.out.println("Due Date Choose Successfullly"); // Due date
 		  driver.findElement(By.cssSelector("input[placeholder='Set']")).sendKeys("10");
 		  System.out.println("Sucessfully Input Story Point");
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("(//div[@class='content-panel-simple-action'])[2]")).click();
+		  driver.findElement(By.xpath("(//li[@class='pair-item'])[1]")).click();
+		  System.out.println("Hide members successfully");
 //		  String actualUrl = driver.getCurrentUrl();
 // 	      String expectedUrl = "https://test000.niftyuat.com/";
 //    	  Assert.assertEquals(actualUrl, expectedUrl);	  	

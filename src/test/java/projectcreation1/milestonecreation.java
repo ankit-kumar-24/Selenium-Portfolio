@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 
 @Test
 public class milestonecreation {
-	WebDriver driver;
-//  @BeforeTest
   public void mile() throws Exception {
 	  System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");	 
 	  ChromeDriver driver = new ChromeDriver();

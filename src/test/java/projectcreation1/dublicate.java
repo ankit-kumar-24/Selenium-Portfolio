@@ -1,14 +1,14 @@
 package projectcreation1;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class taskcreation{
+public class dublicate {
 	@Test
-	public void task() throws InterruptedException {
+	public void dublicattteee() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");	 
 		  ChromeDriver driver = new ChromeDriver();
 		  driver.manage().window().maximize();
@@ -21,27 +21,31 @@ public class taskcreation{
 	  	  Thread.sleep(20000);
 	  	  driver.findElement(By.xpath("//span[@class='btn visible-on-hover nav-btn-add']")).click();
 	  	  Thread.sleep(5000);
-	  	  driver.findElement(By.cssSelector("input[placeholder='Enter project name...']")).sendKeys("Task creation 1");
+	  	  driver.findElement(By.cssSelector("input[placeholder='Enter project name...']")).sendKeys("Task dublicate");
 	  	  Thread.sleep(2000);
 	  	  WebElement wb = driver.findElement(By.cssSelector("div[class='section-step step-1 active'] button[class='btn btn-success ']"));
-	  	  wb.click(); // project creation
-	  	  System.out.println("Project Created Successfully");
+	  	  wb.click();   // Project creation
+	  	  System.out.println("User Create Project Sucessfully");
 	  	  Thread.sleep(5000);
-		  driver.findElement(By.xpath("//button[contains(text(),'Add a Task')]")).click();
+		  driver.findElement(By.xpath("//button[contains(text(),'Add a Task')]")).click(); // task creation
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath("//div[@class='multi-line-input edit-panel-input empty']")).sendKeys("test1");
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath("//button[@class='btn btn-small btn-success']")).click();
-		  Thread.sleep(5000);
-		  System.out.println("Task Created Successfully");
-		  driver.findElement(By.xpath("//div[@class='task-overlay']")).click();
+		  System.out.println("User Create Task Sucessfully");
 		  Thread.sleep(2000);
-		  WebElement sub = driver.findElement(By.xpath("//div[@class='multi-line-input item-title empty']"));
-		  sub.sendKeys("Test 1");
+		  Actions actions = new Actions(driver);
+		  WebElement menuOption = driver.findElement(By.xpath("//div[@class='task-overlay']")); // We have to delete all older task
+		  actions.moveToElement(menuOption).build().perform();
+		  driver.findElement(By.xpath("(//div[@class='task-actions-holder'])[1]")).click();
 		  Thread.sleep(2000);
-		  sub.sendKeys(Keys.ENTER);
-		  System.out.println("Subtask Created Successfully");
-		  Thread.sleep(5000);
-		  driver.close();
-  }
+		  driver.findElement(By.xpath("(//div[@class='item'])[12]")).click();
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("(//button[normalize-space()='Confirm'])[1]")).click();
+		  System.out.println("Task dublicate successfully");
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("(//div[@class='dropdown-btn-element btn btn-icon btn-small'])[1]")).click();
+		  driver.findElement(By.xpath("//li[1]")).click();
+		  System.out.println("Task group dublicate successfully");
+	}
 }
