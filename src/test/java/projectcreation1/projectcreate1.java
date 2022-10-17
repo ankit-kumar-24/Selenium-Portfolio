@@ -30,20 +30,27 @@ public class projectcreate1 {
   	  Thread.sleep(2000);
   	  WebElement wb = driver.findElement(By.cssSelector("div[class='section-step step-1 active'] button[class='btn btn-success ']"));
   	  wb.click();
+  	  String title = driver.getTitle();
+  	  String expectedtitle = "Ankit Tasks | Nifty";
+  	  if(title.equals(expectedtitle)) {
+  		System.out.println("Valid title " +title);
+  	  }
+  	  else {
+  	  System.out.println("Wrong title");
+  	  }
   	  Thread.sleep(5000);
   	  driver.close();
+  }
+}
 //  	  String actualUrl = driver.getCurrentUrl();
 //  	  String expectedUrl = "https://gortnmtrur6.niftyuat.com/my/tasks";
 //	  Assert.assertEquals(actualUrl, expectedUrl);
-  }
+  
 //  	  if(wb) {
 //  	  System.out.print("succesfully project creation");
 //  	  }
 //  	  else {
 //  		System.out.print("Project creation failed");
 //  	  }
-//	  @AfterTest
-//private void close() {
-//	// TODO Auto-generated method stub
+
 	
-}

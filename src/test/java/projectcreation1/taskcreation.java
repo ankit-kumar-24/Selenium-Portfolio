@@ -30,8 +30,16 @@ public class taskcreation{
 		  driver.findElement(By.xpath("//button[contains(text(),'Add a Task')]")).click();
 		  Thread.sleep(2000);
 		  driver.findElement(By.xpath("//div[@class='multi-line-input edit-panel-input empty']")).sendKeys("test1");
-		  Thread.sleep(2000);
+		  Thread.sleep(1000);
 		  driver.findElement(By.xpath("//button[@class='btn btn-small btn-success']")).click();
+		  String title = driver.getTitle();
+		  String expectedtitle = "Task creation 1 Tasks | Nifty";
+	  	  if(title.equals(expectedtitle)) {
+	  		System.out.println("Valid task title " +title);
+	  	  }
+	  	  else {
+	  	  System.out.println("Wrong task title");
+	  	  }
 		  Thread.sleep(5000);
 		  System.out.println("Task Created Successfully");
 		  driver.findElement(By.xpath("//div[@class='task-overlay']")).click();
@@ -41,6 +49,14 @@ public class taskcreation{
 		  Thread.sleep(2000);
 		  sub.sendKeys(Keys.ENTER);
 		  System.out.println("Subtask Created Successfully");
+		  String title1 = driver.getTitle();
+		  String expectedtitle1 = "Task creation 1 Tasks | Nifty";
+	  	  if(title.equals(expectedtitle1)) {
+	  		System.out.println("Valid task title " +title);
+	  	  }
+	  	  else {
+	  	  System.out.println("Wrong task title");
+	  	  }
 		  Thread.sleep(5000);
 		  driver.close();
   }

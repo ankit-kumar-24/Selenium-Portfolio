@@ -33,6 +33,14 @@ public class projecttemplate {
 		  Thread.sleep(5000);
 		  driver.findElement(By.xpath("//body/div[@id='root']/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")).click();
 		  Thread.sleep(2000);
-		  // driver.findElement()
+		  driver.findElement(By.xpath("(//span[contains(text(),'Save as template…')])[1]")).click();
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("(//input[@placeholder='E.g., Product Management'])[1]")).sendKeys("Template");
+		  driver.findElement(By.xpath("(//textarea[@placeholder='Add a description...'])[1]")).sendKeys("Project Template");
+		  Thread.sleep(2000);
+		  driver.findElement(By.xpath("(//button[normalize-space()='Create template'])[1]")).click();
+		  System.out.println("Project template saved successfully");
+		  Thread.sleep(5000);
+		  driver.close();
 	}
 }
